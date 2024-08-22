@@ -6,7 +6,6 @@ import SplashScreenButton from '../components/SplashScreenButton';
 import { router } from 'expo-router';
 import LottieView from 'lottie-react-native';
 
-
 let Player: React.ComponentType<any> | undefined;
 
 if (Platform.OS === 'web') {
@@ -22,9 +21,14 @@ const Welcome = () => {
   return (
     <View style={{ backgroundColor: '#1b3340', flex: 1, justifyContent: 'center', alignItems: 'center', padding: 6 }}>
       
-      {/* Conditional Lottie Animation Section */}
+      {/* Conditional Lottie Animation Section with Rounded Corners */}
       <Animated.View 
-        style={{ width: '100%', alignItems: 'center' }}
+        style={{
+          width: '100%',
+          alignItems: 'center',
+          borderRadius: 20, // Add rounded corners
+          overflow: 'hidden', // Ensure the rounded corners apply to child components
+        }}
         entering={FadeInDown.duration(400).springify()}
       >
         {Platform.OS === 'web' ? (
@@ -61,7 +65,7 @@ const Welcome = () => {
         <Text 
           style={{ fontSize: 18, color: '#fcfefd', marginTop: 8, textAlign: 'center', lineHeight: 24, fontFamily: 'BarlowSemiBold' }}
         >
-          Welcome to VetLink!<HelloWave /> Your one-stop platform for all your pet care needs. 🐶
+          Welcome to VetLink MarketPlace!<HelloWave /> Your one-stop platform for all your pet care needs. 🐶
         </Text>
       </Animated.View>
 
@@ -72,7 +76,7 @@ const Welcome = () => {
       >
         <SplashScreenButton
           title="Get Started"
-          action={() => router.push('/(tabs)')}
+          action={() => router.push('/signIn')}
         />
       </Animated.View>
     </View>
