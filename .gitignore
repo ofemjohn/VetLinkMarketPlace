@@ -102,3 +102,5 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+backend/src/vetlink-marketplace-firebase-adminsdk-u7c83-4eb07f1a10.json
